@@ -19,6 +19,12 @@ def test_part_of_response():
     #я утверждаю,что ответ на этот запрос? его json содержит имя со значением Бульбазавр.
     assert response_get.json()["data"][0]["name"]=='Бульбазавр'
 
+#Тест, что строчка содержит имя моего тренера (ID 21759) Post12
+def test_part_of2_response():
+    response_get = requests.get(url=f'{URL}/trainers', params = {'trainer_id': TRAINER_ID})
+    #я утверждаю,что ответ на этот запрос, его json содержит имя тренера Post12
+    assert response_get.json()["data"][0]["trainer_name"]=='Post12'
+
 #Создали текстуру, обозначили какие параметры будем передавать, в [] передаем значения этих параметров. 
 @pytest.mark.parametrize('key, value', [('name','Бульбазавр'), ('trainer_id',TRAINER_ID), ('id','158095')])
 #Пишем конву, в которые будут передаваться эти параметры
