@@ -8,12 +8,12 @@ TOKEN = 'USER_TOKEN'
 HEADER = {'Content-Type': 'application/json', 'trainer_token':TOKEN}
 TRAINER_ID = '21759'
 
-#Тест на сравнение cравнение статуса
+#Тест на cравнение статуса
 def test_status_code():
     response = requests.get(url=f'{URL}/pokemons', params = {'trainer_id': TRAINER_ID})
     assert response.status_code == 200
 
-#Тест на сравнение какой то части ответа? что строчка содержит 
+#Тест на сравнение какой то части ответа, что строчка содержит имя со значением Бульбазавр
 def test_part_of_response():
     response_get = requests.get(url=f'{URL}/pokemons', params = {'trainer_id': TRAINER_ID})
     #я утверждаю,что ответ на этот запрос? его json содержит имя со значением Бульбазавр.
