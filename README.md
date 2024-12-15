@@ -57,7 +57,7 @@ python3 -m pip install requests
 python3 -m pip install pytest
 ```
 
-Запускаем
+    Запускаем
 ``` markdown
 pytest tests/test_pokemon.py
 ```
